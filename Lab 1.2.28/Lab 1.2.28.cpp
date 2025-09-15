@@ -34,93 +34,13 @@ public:
     void push_front(int value);
     bool pop_front(int& value);
     bool pop_back(int& value);
-    int  at(int index);
-    void insert_at(int index, int value);
-    void remove_at(int index);
+
 
 private:
     Node* head;
     Node* tail;
     int listSize;
-
 };
-
-int List::at(int index)
-{
-    int i = 0;
-    Node* n = head;
-    while (i < index) {
-        n = n->next;
-        i++;
-    }
-    return n->value;
-}
-
-void List::insert_at(int index, int value)
-{
-    if (index == 0)
-    {
-        push_front(value);
-    }
-    else if (index == listSize)
-    {
-        push_back(value);
-    }
-    else
-    {
-        Node* n = new Node(value);
-
-        Node* before = head;
-
-        for (int i = 1; i < index; i++) {
-            before = before->next;
-        }
-        n->next = before->next;
-        before->next = n;
-        if (n->next == nullptr)
-        {
-            tail = n;
-        }
-        listSize++;
-    }
-}
-
-void List::remove_at(int index)
-{
-    if (index == 0)
-    {
-        int temp;
-        pop_front(temp);
-    }
-    else if (index == listSize)
-    {
-        int temp;
-        pop_back(temp);
-    }
-    else
-    {
-        Node* before = head;
-
-        for (int i = 1; i < index; i++) {
-            before = before->next;
-        }
-
-        Node* removed = before->next;
-        before->next = removed->next;
-        delete removed;
-        listSize--;
-    }
-}
-
-
-void printList(List& list)
-{
-    for (int i = 0; i < list.size(); i++)
-    {
-        std::cout << "list[" << i << "] == " << list.at(i) << "\n";
-    }
-}
-
 
 bool List::pop_back(int& value)
 {
@@ -224,19 +144,15 @@ int main()
 {
     List list;
 
-    list.push_back(1);
-    list.push_back(2);
-    list.push_back(3);
-    list.push_back(4);
-    printList(list);
-    std::cout << "\n";
+    list.push_front(1);
+    list.push_front(2);
+    list.push_front(3);
+    list.push_front(4);
 
-    list.remove_at(2);
-    printList(list);
-    std::cout << "\n";
-
-    list.insert_at(1, 6);
-    printList(list);
-
-    return 0;
+    int value = 0;
+    while (list.pop_back(value))
+    {
+        std::cout << value << "\n";
+    }
+    return 0; 
 }

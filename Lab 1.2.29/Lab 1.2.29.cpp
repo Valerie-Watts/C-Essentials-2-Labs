@@ -28,7 +28,6 @@ class List
 {
 public:
     List();
-    List(List& other);
     ~List();
     int size();
     void push_back(int value);
@@ -45,15 +44,6 @@ private:
     int listSize;
 
 };
-
-List::List(List& other) : List()
-{
-    Node* n = other.head;
-    while (n != nullptr) {
-        push_back(n->value);
-        n = n->next;
-    }
-}
 
 int List::at(int index)
 {
@@ -232,29 +222,21 @@ List::List() : head(nullptr), listSize(0), tail(nullptr)
 
 int main()
 {
-    List list1;
-    list1.push_back(1);
-    list1.push_back(2);
-    list1.push_back(3);
-    list1.push_back(4);
-    std::cout << "list1" << "\n";
-    printList(list1);
+    List list;
+
+    list.push_back(1);
+    list.push_back(2);
+    list.push_back(3);
+    list.push_back(4);
+    printList(list);
     std::cout << "\n";
 
-    List list2(list1);
-    std::cout << "list2" << "\n";
-    printList(list2);
+    list.remove_at(2);
+    printList(list);
     std::cout << "\n";
 
-    list1.insert_at(1, 6);
-    list2.remove_at(2);
+    list.insert_at(1, 6);
+    printList(list);
 
-    std::cout << "list1" << "\n";
-    printList(list1);
-    std::cout << "\n";
-    std::cout << "list2" << "\n";
-    printList(list2);
-    std::cout << "\n";
-
-    return;
+    return 0;
 }
