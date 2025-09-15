@@ -13,7 +13,7 @@ Node::Node(int val) : value(val), next(nullptr), previous(nullptr) {}
 class List {
 public:
     List();
-    List(List& other);
+    List(const List& other);
     ~List();
     int size();
     void push_back(int value);
@@ -30,12 +30,9 @@ private:
     int listSize;
 };
 
-
-Node::Node(int val) : value(val), next(nullptr), previous(nullptr) {}
-
 List::List() : head(nullptr), tail(nullptr), listSize(0) {}
 
-List::List(List& other) : List() {
+List::List(const List& other) : List() { 
     Node* n = other.head;
     while (n != nullptr) {
         push_back(n->value);
@@ -121,7 +118,6 @@ bool List::pop_back(int& value) {
 
 int List::at(int index) {
     if (index >= listSize || index < 0) {
-
         std::cout << "Index out of bounds.\n";
         return -1;
     }
