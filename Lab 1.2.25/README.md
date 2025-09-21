@@ -2,7 +2,7 @@
 
 -----
 
-## Explicación del Ejercicio 🧠
+## Explicación del Ejercicio 
 
 Este ejercicio se centra en la **gestión de memoria** y el ciclo de vida de los objetos en una lista enlazada, introduciendo el concepto de **destructores** para prevenir fugas de memoria (*memory leaks*).
 
@@ -19,7 +19,7 @@ El programa `main` solo inserta cuatro elementos en la lista. La acción princip
 
 -----
 
-## Ejemplo de Funcionamiento 🖥️
+## Ejemplo de Funcionamiento 
 
 El código no es interactivo. La salida muestra la creación de los cuatro nodos seguida de su destrucción, que es iniciada por el destructor de la lista cuando el programa termina.
 
