@@ -4,29 +4,25 @@
 
 ## Explicación del Ejercicio
 
-Este ejercicio mejora la lista enlazada para convertirla en una estructura más flexible, capaz de realizar operaciones tanto al principio como al final. Esto se logra mediante la introducción de un puntero a la cola de la lista.
+Este código implementa una lista enlazada simple que funciona como una **cola** con comportamiento **FIFO (First-In, First-Out)**. Esto significa que el primer elemento en entrar es el primero en salir.
 
-  * **Puntero `tail`**:
+  * **Estructura de la Lista**:
 
-      * La modificación principal es la adición de un puntero `Node* tail` a la clase `List`. Este puntero siempre apunta al **último nodo** de la lista.
-      * La ventaja de tener este puntero es que permite añadir nuevos nodos al final de la lista de forma extremadamente eficiente (una operación de tiempo constante, O(1)).
+      * La clase `List` utiliza punteros `head` (cabeza) y `tail` (cola) para gestionar de manera eficiente el inicio y el final de la lista.
+      * El uso combinado de inserciones por el final y extracciones por el inicio le confiere su comportamiento de cola.
 
-  * **Nuevas Operaciones**:
+  * **Operaciones Clave**:
 
-      * **`push_back(int value)`**: Inserta un nuevo elemento al **final** de la lista utilizando el puntero `tail` para un rendimiento óptimo.
-      * **`pop_back(int& value)`**: Elimina el elemento del **final** de la lista. Es importante notar que, en una lista enlazada simple, esta operación es menos eficiente (tiempo lineal, O(n)), ya que requiere recorrer la lista desde el `head` para encontrar el nodo anterior al final.
+      * **`push_back(int value)`**: Añade un elemento al **final** de la lista (operación de encolar).
+      * **`pop_front(int& value)`**: Elimina un elemento del **inicio** de la lista (operación de desencolar).
 
-  * **Métodos Actualizados**:
-
-      * Las funciones `push_front` y `pop_front` existentes han sido actualizadas para asegurar que el puntero `tail` se mantenga consistente, especialmente en casos donde la lista está vacía o se queda con un solo elemento.
-
-La función `main` demuestra esta nueva capacidad: inserta varios elementos por el frente y luego los extrae por la parte trasera, exhibiendo un comportamiento de cola **FIFO** (First-In, First-Out).
+La función `main` demuestra claramente este funcionamiento: primero, añade los números del 1 al 4 en la parte trasera de la lista. Luego, los extrae desde el frente, imprimiéndolos en el mismo orden en que fueron insertados.
 
 -----
 
 ## Ejemplo de Funcionamiento
 
-El código no es interactivo. El programa inserta los números 4, 3, 2 y 1 al frente de la lista (resultando en el orden `[4, 3, 2, 1]`) y luego los extrae desde el final. La salida en la consola es la siguiente:
+El código no es interactivo. El programa encola los números 1, 2, 3 y 4, y luego los desencola e imprime. La salida en la consola es la siguiente:
 
 ```bash
 1
