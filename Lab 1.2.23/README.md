@@ -2,7 +2,7 @@
 
 -----
 
-## Explicación del Ejercicio 💧
+## Explicación del Ejercicio
 
 Este ejercicio demuestra el uso de **clases abstractas** y **funciones virtuales puras**, conceptos avanzados de la herencia y el polimorfismo en C++.
 
@@ -25,7 +25,7 @@ Este ejercicio demuestra el uso de **clases abstractas** y **funciones virtuales
 
 -----
 
-## Ejemplo de Funcionamiento 🖥️
+## Ejemplo de Funcionamiento 
 
 A continuación se muestra una sesión de ejemplo donde un usuario registra varios animales antes de salir.
 
