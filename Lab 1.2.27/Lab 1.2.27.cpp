@@ -33,7 +33,7 @@ public:
     void push_back(int value);
     void push_front(int value);
     bool pop_front(int& value);
-    bool pop_back(int& value);
+    
 
 
 private:
@@ -41,39 +41,6 @@ private:
     Node* tail;
     int listSize;
 };
-
-
-
-
-bool List::pop_back(int& value)
-{
-    if (head == nullptr) {
-        return false;
-    }
-
-    Node* current = head;
-    Node* previous = nullptr;
-
-    while (current->next != nullptr) {
-        previous = current;
-        current = current->next;
-    }
-
-    value = current->value;
-    delete current;
-    listSize--;
-
-    if (previous != nullptr) {
-        previous->next = nullptr;
-        tail = previous;
-    }
-    else {
-        head = nullptr;
-        tail = nullptr;
-    }
-
-    return true;
-}
 
 bool List::pop_front(int& value)
 {
@@ -147,13 +114,13 @@ int main()
 {
     List list;
 
-    list.push_front(1);
-    list.push_front(2);
-    list.push_front(3);
-    list.push_front(4);
+    list.push_back(1);
+    list.push_back(2);
+    list.push_back(3);
+    list.push_back(4);
 
     int value = 0;
-    while (list.pop_back(value))
+    while (list.pop_front(value))
     {
         std::cout << value << "\n";
     }
