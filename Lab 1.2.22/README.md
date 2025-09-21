@@ -2,7 +2,7 @@
 
 -----
 
-## Explicación del Ejercicio 🧬
+## Explicación del Ejercicio 
 
 Este ejercicio es una demostración de dos conceptos fundamentales en la Programación Orientada a Objetos: la **herencia** y el **polimorfismo**.
 
@@ -20,7 +20,7 @@ El programa `main` crea un objeto de cada clase y utiliza la función polimórfi
 
 -----
 
-## Ejemplo de Funcionamiento 🖥️
+## Ejemplo de Funcionamiento 
 
 El código no es interactivo. Al compilar y ejecutar, la salida que producirá en la consola es la siguiente:
 
